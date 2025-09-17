@@ -132,6 +132,67 @@
             height: 100px;
 
         }
+        /* 📱 Tablets / Mobile */
+@media (max-width: 992px) {
+  .section {
+    flex-direction: column;
+    padding: 0 20px; /* पहले 250px था */
+  }
+
+  .contact-container {
+    max-width: 100%; /* पूरी चौड़ाई */
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  #contact-container {
+    margin: 20px auto;
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+/* 📱 Small phones */
+@media (max-width: 576px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  .section {
+    padding: 0 10px;
+  }
+
+  .contact-container input,
+  .contact-container textarea,
+  .contact-container button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .contact-container h2 {
+    font-size: 20px;
+  }
+
+  .contact-container button {
+    padding: 10px;
+  }
+
+  #input {
+    width: 100% !important; /* color input भी full width हो जाए */
+    height: auto;
+  }
+
+  .fS {
+    flex-direction: column; /* radio & checkbox stack */
+  }
+
+  .f1, .S1 {
+    width: 100%;
+    padding: 5px;
+  }
+}
+
     </style>
 
 </head>

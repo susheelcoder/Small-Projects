@@ -7,36 +7,74 @@
     <title>Welcome to Color World</title>
 </head>
 <style>
-    body {
-        margin: 0 200px;
+   body {
+  margin: 0 200px;
+}
 
-    }
+/* Column container */
+.column {
+  display: flex;
+  flex-wrap: wrap; /* mobile पर items नीचे आ जाएं */
+  gap: 10px;
+}
 
-    .column {
-        display: flex;
-    }
+/* Row box */
+.row {
+  background-color: #302e2e29;
+  padding: 30px;
+  height: 100px;
+  width: 300px;
+  box-sizing: border-box;
+}
 
-    .row {
-        background-color: #302e2e29;
-        /* background-color: #f5ed05ff; */
-        padding: 30px;
-        height: 100px;
-        width: 300px;
-    }
+/* Hr */
+.hr {
+  margin-right: 100%;
+}
 
-    .hr {
-        margin-right: 100%;
-    }
-    .tringa{
-        display: flex;
-        
-    }
-    .div-tringa{
-      background-color: #0000FF;
-      margin-top: 0px;
-      margin: 0 5px 5px 5px;
-        padding:20px;
-    }
+.tringa {
+  display: flex;
+}
+
+.div-tringa {
+  background-color: #0000FF;
+  margin-top: 0px;
+  margin: 0 5px 5px 5px;
+  padding: 20px;
+}
+
+/* 📱 Mobile view */
+@media (max-width: 768px) {
+  body {
+    margin: 0 10px; /* मोबाइल पर margin कम */
+  }
+
+  .column {
+    flex-direction: column; /* items vertically */
+    align-items: stretch;
+  }
+
+  .row {
+    width: 100%; /* row full width */
+    height: auto; /* height auto ताकि content fit हो */
+    padding: 15px;
+  }
+
+  .div-tringa {
+    padding: 10px; /* छोटे padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .row {
+    font-size: 14px; /* छोटे devices पर text छोटा */
+  }
+  button {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}
+
 </style>
 
 <body>
