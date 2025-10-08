@@ -35,3 +35,68 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+
+
+
+// ///////////////////////////
+
+
+// Form
+
+   const form = document.getElementById("chhathForm");
+            const popup = document.getElementById("thankYouPopup");
+
+            form.addEventListener("submit", async function (event) {
+                event.preventDefault();
+
+                // Get values
+                const schoolName = document.getElementById("schoolName").value.trim();
+                const teacherName = document.getElementById("teacherName").value.trim();
+                const teacherPhone = document.getElementById("teacherPhone").value.trim();
+                const totalStudents = document.getElementById("totalStudents").value.trim();
+                const studentNames = document.getElementById("studentNames").value.trim();
+
+                // Date + Random No.
+                const today = new Date().toLocaleDateString('en-GB');
+                const randomNo = Math.floor(Math.random() * 100000);
+
+                // Prepare data for SheetDB
+                const data = {
+                    data: [{
+                        no: randomNo,
+                        date: today,
+                        "School / Institute Name:": schoolName,
+                        "Teacher Name:": teacherName,
+                        "Teacher Phone No.:": teacherPhone,
+                        "Total Number of Students:": totalStudents,
+                        "Students Name:": studentNames
+                    }]
+                };
+
+                try {
+                    // Send to SheetDB
+                    const response = await fetch("https://sheetdb.io/api/v1/o9x6ygauy31ej", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (response.ok) {
+                        popup.style.display = "flex";
+                        form.reset();
+                    } else {
+                        alert("❌ कुछ गलती हुई है, कृपया दोबारा कोशिश करें!");
+                    }
+                } catch (error) {
+                    alert("⚠️ Network Error! कृपया बाद में पुनः प्रयास करें।");
+                    console.error(error);
+                }
+            });
+
+            function closePopup() {
+                popup.style.display = "none";
+            }
+
+
+  // //////////////////////////////
