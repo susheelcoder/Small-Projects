@@ -1,0 +1,279 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>छठ पूजा एडमिन पैनल</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/phone.css">
+
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #fff8eb;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background: #ff9933;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 30px;
+        }
+
+        iframe {
+            width: 95%;
+            height: 80vh;
+            border: 2px solid #ffb84d;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .announcement {
+            background: #fff3da;
+            border: 1px solid #ffd699;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 1rem;
+            resize: none;
+        }
+
+        .btn {
+            background: #ff9933;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e67e22;
+        }
+
+        footer {
+            margin: 30px 0;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* Voice button */
+        .voice-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ffb84d;
+            border: none;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        .voice-btn:hover {
+            background: #ff9900;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #fffaf3;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #333;
+        }
+
+        header {
+            background: #ffb84d;
+            color: white;
+            padding: 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #c85000;
+            margin-top: 20px;
+        }
+
+        textarea {
+            width: 80%;
+            height: 120px;
+            padding: 10px;
+            border: 2px solid #f0b96e;
+            border-radius: 8px;
+            resize: none;
+            font-size: 1rem;
+        }
+
+        button {
+            background: #ff9900;
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #e68300;
+        }
+
+        #broadcastDisplay {
+            margin: 40px auto;
+            width: 85%;
+            background: #fff4e0;
+            border: 2px dashed #f0b96e;
+            border-radius: 10px;
+            padding: 20px;
+            color: #333;
+        }
+
+        .footer {
+            margin-top: 50px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🎯 छठ पूजा एडमिन पैनल</h1>
+        <nav>
+            <a href="#records">Records</a>
+            <a href="#announce">Announcements</a>
+            <a href="#voice">Voice</a>
+        </nav>
+    </header>
+
+    <main>
+
+
+
+        <section id="voice">
+            <h2>🔊 Voice Announcement</h2>
+            <p>Admin voice के द्वारा घोषणा सुन सकते हैं।</p>
+            <button class="btn" onclick="playVoice()">🔊 सुनें</button>
+        </section>
+
+        <!--  -->
+        <textarea id="broadcastMsg" placeholder="यहाँ अपना संदेश लिखें..."></textarea><br>
+        <button onclick="sendBroadcast()">📢 Broadcast करें</button>
+
+        <div id="broadcastDisplay">
+            <h3>📢 Live Announcement</h3>
+            <p id="liveMsg">अभी तक कोई घोषणा नहीं की गई है।</p>
+        </div>
+
+
+        <!--  -->
+    </main>
+
+    <footer>
+        <p>© 2025 छठ पूजा महापर्व समिति | Admin Access Only | Designed by Susheel Coder</p>
+    </footer>
+
+    <script>
+        function playVoice() {
+            const msg = "यह छठ पूजा एडमिन पैनल है। यहाँ समिति सभी रिकॉर्ड देख सकती है और घोषणा कर सकती है। कृपया सभी जानकारी सही और अद्यतन रखें।";
+            const speech = new SpeechSynthesisUtterance(msg);
+            speech.lang = 'hi-IN';
+            speech.rate = 1;
+            speech.pitch = 1;
+            window.speechSynthesis.speak(speech);
+        }
+
+    </script>
+
+    <!-- Floating Voice Button -->
+    <button class="voice-btn" onclick="playVoice()">🔊 सुनें</button>
+
+
+
+    <script>
+        function sendBroadcast() {
+            const msg = document.getElementById("broadcastMsg").value.trim();
+            const liveMsg = document.getElementById("liveMsg");
+
+            if (msg === "") {
+                alert("कृपया पहले कोई संदेश लिखें!");
+                return;
+            }
+
+            // संदेश दिखाना
+            liveMsg.textContent = msg;
+
+            // localStorage में सेव करना ताकि पेज रिफ्रेश के बाद भी दिखे
+            localStorage.setItem("broadcastMessage", msg);
+
+            alert("✅ संदेश सफलतापूर्वक प्रसारित हुआ!");
+            document.getElementById("broadcastMsg").value = "";
+        }
+
+        // पेज लोड होने पर पुराना संदेश दिखाएं
+        window.onload = function () {
+            const saved = localStorage.getItem("broadcastMessage");
+            if (saved) document.getElementById("liveMsg").textContent = saved;
+        };
+    </script>
+
+
+
+</body>
+
+</html>

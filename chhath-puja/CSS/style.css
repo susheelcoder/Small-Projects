@@ -164,7 +164,7 @@ header button:hover {
 .mn .content {
     text-align: center;
     z-index: 2;
-    color: #fff;
+    color: #ecececb8;
 }
 
 .mn .content h1 {
@@ -174,7 +174,7 @@ header button:hover {
 }
 
 .mn .content span {
-    color: #ffe082;
+    color: #ffe082d6;
 }
 
 .mn .content p {
