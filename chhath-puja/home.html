@@ -7,16 +7,18 @@
     <title>Chhath Puja Admission Page</title>
     <link rel="stylesheet" href="/CSS/style.css">
     <link rel="stylesheet" href="/CSS/phone.css">
+    <meta name="theme-color" content="#0d47a1">
+    <link rel="manifest" href="manifest.json">
 
     <style>
         .voice-btn {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            /* bottom: 20px;
+            right: 20px; */
             background: #ffb84d;
             border: none;
             color: #fff;
-            padding: 12px 20px;
+            /* padding: 12px 20px; */
             font-size: 1rem;
             border-radius: 50px;
             cursor: pointer;
@@ -32,16 +34,17 @@
 
 
         /* Voice button */
-        .voice-btna {
-            /* position: fixed;
-            bottom: 20px;
-            right: 20px; */
-            background: #1009016b;
-
+        #installBt {
+            color: yellow;
+            margin-top: 26px;
+            border-radius: 20px;
+            padding: 10px;
+            background: #0600b6c2;
         }
 
-        .voice-btna:hover {
+        #installBt:hover {
             background: #ff9900;
+            color: black;
         }
     </style>
 </head>
@@ -59,8 +62,11 @@
             <a href="#">Home</a>
             <a href="#about">About</a>
             <a href="#form">Contact</a>
+            <button class="btn" id="installBtn"> APP install</button>
+            
+
         </nav>
-        <button><a href="/a2.html">live</a></button>
+        <button class="bt"><a href="/a2.html">live</a></button>
         <div class="menu-btn" id="menu-btn">&#9776;</div>
     </header>
 
@@ -68,15 +74,19 @@
     <main>
         <section class="mn">
             <video id="bgVideo" autoplay muted playsinline class="bg-video"></video>
-            <div style="background-color: rgba(29, 29, 37, 0.371); border-radius: 10%; padding: 30px;" class="content">
+            <div style="background-color: rgba(29, 29, 37, 0.371); border-radius: 130px 0; " class="content">
                 <h1>🏆 Welcome! <br> <span>छोटे कदम, बड़ा धमाका</span> <br> बच्चों की भाषण प्रतियोगिता</h1>
                 <br>
                 <h4>🏆 बच्चों की धमाकेदार प्रस्तुति — छठ पूजा 28 अक्टूबर 2025!</h4>
                 <br>
                 <!-- <a href="#form" class="btn">Join Now</a> -->
                 <button onclick="playVoice1()">🔊 सुनें</button>
+                
+
+
             </div>
         </section>
+
 
         <!-- about -->
         <section class="about" id="about">
@@ -105,9 +115,9 @@
                 </div>
             </div>
 
-            
-        <!-- 🖼️ Poster Section -->
-        <!-- <section class="poster-section">
+
+            <!-- 🖼️ Poster Section -->
+            <!-- <section class="poster-section">
             <div class="poster-content">
                 <h2>Chhath Puja Poster</h2>
                 <p>May the Sun God bless everyone with happiness and prosperity.</p>
@@ -126,7 +136,7 @@
             </div>
         </section>
 
-                <!-- 🖼️ Poster Section -->
+        <!-- 🖼️ Poster Section -->
         <section class="poster-section-1">
             <div class="poster-content-1">
                 <!-- <h2>Chhath Puja Poster</h2>
@@ -326,3 +336,86 @@ Email: susheelcoder1@gmail.com,
         window.speechSynthesis.speak(speech);
     }
 </script>
+
+
+
+
+
+
+
+
+
+    <script>
+        // Create manifest dynamically (so all code stays in one file)
+        const manifestData = {
+            "name": "विष्णुपुर छठ पूजा ऐप",
+            "short_name": "Chhath Puja",
+            "start_url": "home.html",
+            "display": "standalone",
+            "background_color": "#ffffff",
+            "theme_color": "#0d47a1",
+            "icons": [
+                {
+                    "src": "https://w7.pngwing.com/pngs/380/709/png-transparent-happy-chhath-puja-basket-for-chhath-puja.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                },
+                {
+                    "src": "https://w7.pngwing.com/pngs/380/709/png-transparent-happy-chhath-puja-basket-for-chhath-puja.png",
+                    "sizes": "512x512",
+                    "type": "image/png"
+                }
+            ]
+        };
+
+        const stringManifest = JSON.stringify(manifestData);
+        const blob = new Blob([stringManifest], { type: 'application/json' });
+        const manifestURL = URL.createObjectURL(blob);
+        document.querySelector('link[rel="manifest"]').setAttribute('href', manifestURL);
+
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js', { scope: './' })
+                .then(() => console.log('Service Worker Registered'))
+                .catch(err => console.log('Service Worker registration failed:', err));
+        }
+
+        // Add to Home Screen logic
+        let deferredPrompt;
+        const installBtn = document.getElementById('installBtn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.style.display = 'inline-block';
+        });
+
+        installBtn.addEventListener('click', async () => {
+            installBtn.style.display = 'none';
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log(`User response: ${outcome}`);
+                deferredPrompt = null;
+            }
+        });
+
+        // Create simple Service Worker inline (if not exists)
+        if ('serviceWorker' in navigator) {
+            const swCode = `
+        self.addEventListener('install', (event) => {
+          console.log('Service Worker installing.');
+          self.skipWaiting();
+        });
+        self.addEventListener('activate', (event) => {
+          console.log('Service Worker activating.');
+        });
+        self.addEventListener('fetch', (event) => {
+          event.respondWith(fetch(event.request));
+        });
+      `;
+            const blob = new Blob([swCode], { type: 'application/javascript' });
+            const swURL = URL.createObjectURL(blob);
+            navigator.serviceWorker.register(swURL);
+        }
+    </script>
