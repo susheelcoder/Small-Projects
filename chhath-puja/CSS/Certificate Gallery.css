@@ -1,0 +1,42 @@
+@media only screen and (min-width:800px) and (max-width:1920px) {
+    body {
+        display: none;
+    }
+}
+
+@media only screen and (min-width:300px) and (max-width:800px) {
+    body {
+        background-color: rgb(160, 160, 160);
+
+    }
+
+    .hero {
+        /* width: 100%; */
+        text-align: center;
+        display: flex;
+        margin: 9px;
+        gap: 25px;
+    }
+
+    .hero-left {
+        margin-left: auto;
+    }
+
+    .hero-right {
+        margin-right: auto;
+    }
+
+
+    .h-h2 h2 {
+        margin: 10px;
+    }
+
+    .a1 {
+        background-color: rgb(236, 223, 172);
+    }
+
+    .h2 {
+        text-align: center;
+    }
+
+}
