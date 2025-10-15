@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sound-s1</title>
+</head>
+
+<body>
+
+    <button class="voice-bt" onclick="speakPage()">🔊</button>
+
+</body>
+
+</html>
+
+
+<style>
+    .voice-bt {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s, background-color 0.3s;
+        z-index: 9999;
+    }
+
+    .voice-bt:hover {
+        background-color: #45a049;
+        transform: scale(1.1);
+    }
+</style>
+
+
+
+
+
+
+
+
+   
+
+<script>
+    const message = `
+
+ Welcome!  
+
+`;
+    function speakPage() {
+        const speech = new SpeechSynthesisUtterance(message);
+        speech.lang = "en-IN";
+        // speech.lang = "hi-IN";
+        speech.rate = 1;
+        speech.pitch = 1;
+        window.speechSynthesis.speak(speech);
+    }
+</script>
