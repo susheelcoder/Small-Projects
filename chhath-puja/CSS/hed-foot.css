@@ -119,9 +119,9 @@ header button:hover {
 
     nav.active {
         display: flex;
-        width: 19%;
-        left: 77%;
-        height: 43vh;
+        width: auto;
+        left: 80%;
+        height: 100vh;
         border: dashed;
         border-width: 1px 2px;
         border-radius: 40px;
