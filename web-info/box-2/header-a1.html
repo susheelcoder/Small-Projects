@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header footer </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="header-a1.css">
+</head>
+
+
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="he-left">
+            <div class="footer-logo">
+                <img class="img-logo" src="/img-video/lo-1.png" alt="header-img">
+            </div>
+            <!-- <div class="he-tex">
+                <a href="">Susheel <span>Coder</span></a>
+            </div> -->
+        </div>
+
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#skills">skills</a></li>
+                <li><a href="https://techiesusheel.netlify.app/gift/">Gift</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#contact">contact</a></li>
+                <p class="follow-me">follow me</p>
+            </ul>
+            <ul class="social-icons">
+                <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://youtube.com/@TechieSushil" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="https://github.com/susheelcoder" target="_blank"><i class="fab fa-github"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- main -->
+    <main>
+
+    </main>
+
+    <!-- footer -->
+
+
+</body>
+
+</html>
+
+
+<script>
+    // ====== Mobile Menu Toggle ====== //
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.nav');
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            toggle.classList.toggle('open');
+        });
+    });
+</script>
