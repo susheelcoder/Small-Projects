@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+    <footer>
+        <div class="footer">
+            <div class="foo-l">
+                <div class="f-div">
+                    <img class="f-img" src="/img-video/lo-1.png" alt="SusheelCoder Logo">
+                </div>
+                <div>
+                    <h2>All rights reserved © 2025 <span>susheelcoder.com</span></h2>
+                </div>
+            </div>
+
+            <div class="foo-f">
+                <h3>Follow Me</h3>
+                <div class="social-icons">
+                    <ul class="social-icons social-icons-a">
+                        <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                    <ul class="social-icons social-icons-a">
+                        <li><a href="https://youtube.com/@TechieSushil" target="_blank"><i
+                                    class="fab fa-youtube"></i></a>
+                        </li>
+                        <li><a href="https://github.com/susheelcoder" target="_blank"><i class="fab fa-github"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        footer {
+            background: linear-gradient(135deg, #505050, #dacbcb);
+            color: #000000;
+            padding: 35px 15px;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+
+        .footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            gap: 20px;
+        }
+
+        .foo-l {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .f-div {
+            margin-bottom: 10px;
+        }
+
+        .f-img {
+            width: 190px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .footer h2 {
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .footer h2 span {
+            color: #ffb400;
+            font-weight: 600;
+        }
+
+        .foo-f h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            color: #35312a;
+            text-transform: uppercase;
+        }
+
+        .social-icons {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 17px;
+            padding: 0;
+            margin: 0px;
+            font-size: 26px;
+        }
+
+        .social-icons li a {
+            color: #060542;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons li a:hover {
+            color: #ffb400;
+            transform: scale(1.2);
+        }
+
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer {
+                /* flex-direction: column; */
+                gap: 15px;
+            }
+
+            .f-img {
+                width: 214px;
+            }
+
+            .footer h2 {
+                font-size: 12px;
+            }
+
+            .foo-f h3 {
+                font-size: 14px;
+            }
+
+            .social-icons  {
+              gap: 53px;
+            }
+
+            .social-icons li a {
+                color: #272020;
+                font-size: 19px;
+                transition: all 0.3s ease;
+            }
+        }
+    </style>
+
+</body>
+
+</html>
