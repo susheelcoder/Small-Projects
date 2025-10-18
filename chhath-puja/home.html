@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/CSS/home.css">
     <link rel="stylesheet" href="/CSS/phone.css">
     <link rel="stylesheet" href="/CSS/hed-foot.css">
+    <link rel="stylesheet" href="/CSS/main-info.css">
     <meta name="theme-color" content="#0d47a1">
     <link rel="manifest" href="manifest.json">
 
@@ -73,16 +74,23 @@
             background-color: #45a049;
             transform: scale(1.1);
         }
+        summary{
+            color: #45a049;
+            font-size: 20px;
+        }
     </style>
+
 </head>
 
 <body>
+
+
 
     <!-- header -->
     <header>
         <div class="logo">
             <img src="/img-video/lo.png" alt="">
-            Susheel <br>Coder
+            आदर्श नवयुवक मित्रगण  <br> छठ पूजा समिति
         </div>
 
         <nav id="navbar">
@@ -91,7 +99,6 @@
             <a href="#form">Contact</a>
             <a href="Committee.html">Committee</a>
             <a href="Certificate Gallery.html#Students">Students</a>
-            <a href="Certificate Gallery.html#Members">Members</a>
             <a href="Certificate Gallery.html">Certificate <br> Gallery</a>
             <button class="btn" id="installBtn"> APP install</button>
         </nav>
@@ -113,6 +120,32 @@
             </div>
         </section>
 
+
+        <section class="main-info">
+   
+            <details >
+                <summary><b>🎤 छठ पूजा भाषण प्रतियोगिता – संक्षिप्त जानकारी</b></summary>
+                <br>
+                <p><b>तारीख:</b> 28 अक्टूबर 2025 (मंगलवार)</p>
+                <p><b>समय:</b> शाम 4:00 बजे से 6:00 बजे तक</p>
+                <p><b>स्थान:</b>गांधी चाैक, विष्णुपुर </p>
+                <p><b>भाग लेने वाले:</b> विद्यार्थी(उम्र 12–16 वर्ष)</p>
+                <p><b>भाषण समय:</b> प्रति प्रतिभागी 3–10 मिनट</p>
+                <p><b>पंजीकरण तिथि:</b> <a href="/home.html#form"> 26 अक्टूबर 2025 तक  </a></p>
+                <p><b>पुरस्कार:</b><b>सभी प्रतिभागियों को:
+                </b> प्रमाणपत्र + मेडल + गिफ्ट प्रदान किया जाएगा।</p>
+                <p><b>विषय:</b> “छठ पूजा का महत्व और समाज में इसका योगदान”</p>
+                <p><b>आयोजक:</b>  <a href="/Certificate Gallery.html">Susheel kumar</a></p>
+                <br>
+                <p><b>आदर्श नवयुवक मित्रगण – छठ पूजा समिति </b> की ओर से आप सभी को ढेर सारी शुभकामनाएँ।</p>
+                <br>
+
+            </details>
+
+        </section>
+
+
+        <hr>
 
         <!-- about -->
         <section class="about" id="about">
@@ -235,14 +268,14 @@
                     <h4>🔗 Page Links</h4>
                     <ul>
                         <li><a href="index.html"> Home</a></li>
-                        <li><a href="Committee.html"> Committee</a></li>
+                        <li><a style="color: #4dffbb;" href="Committee.html"> Committee</a></li>
                         <li><a href="Certificate Gallery.html">Certificate Gallery</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-right">
                 <h4>📞 Contact Us</h4>
-                <p><strong>छठ पूजा समिति</strong></p>
+                <p><strong>आदर्श नवयुवक मित्रगण – छठ पूजा समिति</strong></p>
                 <p>Address – Gandhi Chhok,Vishnupur ,843324, sitamarhi</p>
                 <p>Phone: +91 9122704118</p>
                 <p>Email: susheelcoder1@gmail.com</p>
@@ -251,7 +284,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2025 vishnupur chhath puja 2025  | Designed with ❤️ for Faith & Culture</p>
+            <p>© 2025 vishnupur chhath puja 2025 | Designed with ❤️ for Faith & Culture</p>
         </div>
     </footer>
 
@@ -280,7 +313,7 @@
         const message = `
 —
 
-छोटे कदम, बड़ा धमाका
+
 “बच्चों की भाषण प्रतियोगिता” 
 
 यहाँ आप छठ पूजा प्रतियोगिता के लिए बच्चों का नाम दर्ज कर सकते हैं।
@@ -300,6 +333,7 @@
 22 अक्टूबर से 26 अक्टूबर 2025 तक।
 
  छठ मइया की कृपा से सबका जीवन उज्जवल हो 
+
   `;
         const speech = new SpeechSynthesisUtterance(message);
         speech.lang = 'hi-IN';
