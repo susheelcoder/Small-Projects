@@ -125,16 +125,15 @@ body {
 }
 
 .ab-senter p {
-  background: #f8f9fa;
+  background: #f8f9fa54;
   padding: 20px 25px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-size: 1.1rem;
-
-  border: dashed;
-  border-width: 2px 4px;
-  border-radius: 40px;
+  /* border: dashed; */
+  /* border-width: 2px 4px; */
+  border-radius: 20px;
 }
 
 .ab-senter p:hover {
@@ -148,6 +147,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   font-size: 1.05rem;
+  border: 4mm ridge rgb(211 220 50 / 0.6);
 }
 
 .ab-down h3 {
@@ -176,8 +176,8 @@ body {
 
   .ab-senter p {
     font-size: 1rem;
-    border-radius: 10% / 50%;
-    border: 4mm ridge rgb(211 220 50 / 0.6);
+    /* border-radius: 10% / 50%; */
+    /* border: 4mm ridge rgb(211 220 50 / 0.6); */
   }
 }
 
@@ -213,6 +213,7 @@ form {
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(9, 9, 9, 0.076);
+  border: 2px solid;
 }
 
 label {
