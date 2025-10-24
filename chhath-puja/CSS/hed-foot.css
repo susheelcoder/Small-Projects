@@ -301,3 +301,56 @@ footer {
       transform: scale(1.05);
       box-shadow: 0 6px 14px rgba(0,0,0,0.4);
     } */
+
+@media (max-width:424px) {
+    body {
+        background-color: rgb(228, 231, 228);
+    }
+
+    .logo p {
+        font-size: 1.4vh;
+    }
+
+    .regLink i {
+        font-size: 1.2vh;
+    }
+
+    legend {
+        left: 20%;
+    }
+
+    button {
+        padding: 5px;
+    }
+}
+
+.mn {
+    margin-top: 10px;
+
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////////////// */
+
+@media only screen and (min-width:800px) {
+
+    #body {
+        display: none;
+    }
+
+}
+
+@media (min-width: 350px) and (max-width: 800px) {
+
+    #not-supported {
+        display: none;
+    }
+}
+
+@media (max-width:350px) {
+    #body {
+        display: none;
+    }
+
+
+}
