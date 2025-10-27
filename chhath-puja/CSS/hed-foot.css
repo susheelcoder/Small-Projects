@@ -304,7 +304,7 @@ footer {
 
 @media (max-width:424px) {
     body {
-        background-color: rgb(228, 231, 228);
+        background-color: rgb(215 232 215);
     }
 
     .logo p {
@@ -315,13 +315,17 @@ footer {
         font-size: 1.2vh;
     }
 
-    legend {
-        left: 20%;
-    }
 
     button {
         padding: 5px;
     }
+
+    .mn .content h1 {
+        font-size: 1.3rem;
+    }
+   .mn h4 {
+    font-size: 1rem;
+   }
 }
 
 .mn {

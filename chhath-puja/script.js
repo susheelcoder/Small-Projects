@@ -121,21 +121,20 @@ function closePopup() {
 
 
    const videos = [
-    '/img-video/v1.mp4',
+    '/img-video/chhath-v/1.mp4',
+    '/img-video/v2.mp4',
+    '/img-video/chhath-v/7.mp4',
     '/img-video/v1.mp4',
     '/img-video/v2.mp4',
+    '/img-video/chhath-v/1.mp4',
     '/img-video/v1.mp4',
-    '/img-video/v1.mp4',
-    '/img-video/v1.mp4',
+    '/img-video/chhath-v/7.mp4',
     '/img-video/v2.mp4',
     '/img-video/v1.mp4',
-    '/img-video/v1.mp4',
+    '/img-video/chhath-v/7.mp4',
     '/img-video/v2.mp4',
     '/img-video/v1.mp4',
-    '/img-video/v1.mp4',
-    '/img-video/v2.mp4',
-    '/img-video/v1.mp4',
-    '/img-video/v1.mp4',
+    '/img-video/chhath-v/1.mp4',
     '/img-video/v2.mp4',
     '/img-video/v1.mp4',
     '/img-video/v2.mp4'
