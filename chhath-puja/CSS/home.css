@@ -26,7 +26,7 @@ body {
   object-fit: cover;
   z-index: -1;
   filter: brightness(70%);
-  border-radius: 130px 0;
+  border-radius: 68px 0;
 }
 
 /* Content over video */
@@ -380,8 +380,8 @@ button:hover {
 .poster-section-1 {
   border: 5px solid black;
   height: 80vh;
-  background-image: url('/img-video/1.jpg');
-  background-image: url('/img-video/p1.png');
+  background-image: url('/img-video/chhath-v/1.jpg');
+  /* background-image: url('/img-video/p1.png'); */
   /* <-- apni image yahan daalein */
   background-size: 100%;
   background-position: center;
@@ -415,7 +415,8 @@ button:hover {
 
 @media (max-width: 768px) {
   .poster-section-1 {
-    height: 45vh;
+    /* height: 45vh; */
+      height: 42vh;
     background-size: 98%;
     background-position: center;
     border-radius: 7px;
