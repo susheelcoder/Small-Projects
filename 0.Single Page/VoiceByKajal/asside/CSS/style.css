@@ -491,6 +491,13 @@ body {
 
 }
 
+@media (max-width:750px) {
+
+    .mobile-hide {
+        display: none;
+    }
+
+}
 
 
 
@@ -577,4 +584,34 @@ body {
     color: #94a3b8;
     line-height: 1.6;
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------- */
+#launchCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    z-index: 9999;
+    transition: opacity 1s ease;
+    pointer-events: none;
+    overflow: hidden;
 }
