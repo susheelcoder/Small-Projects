@@ -800,3 +800,51 @@ body {
         display: none;
     }
 }
+
+
+/* /////  .update-bar /////// */
+ .update-bar {
+            width: 100%;
+            background: #000;
+            overflow: hidden;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+            margin-top: -3px;
+            position: fixed;
+            z-index: 9999;
+        }
+
+        .update-move {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scrollMove 18s linear infinite;
+        }
+
+        .update-move a {
+            color: #00eaff;
+            font-size: 14px;
+            margin-right: 80px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .update-move a:hover {
+            color: #fff;
+        }
+
+        /* Mouse hover par stop */
+        .update-bar:hover .update-move {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollMove {
+
+            0% {
+                transform: translateX(50%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+
+        }
