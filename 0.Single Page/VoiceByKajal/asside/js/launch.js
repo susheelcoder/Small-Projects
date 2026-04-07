@@ -1,6 +1,17 @@
 const canvas = document.getElementById("launchCanvas");
 const ctx = canvas.getContext("2d");
 
+const launchKey = "launchAnimationTime";
+const now = Date.now();
+const lastLaunch = localStorage.getItem(launchKey);
+
+// ⏱️ 10 minutes = 600000 ms
+if (lastLaunch && (now - lastLaunch < 600000)) {
+    canvas.remove();
+} else {
+
+localStorage.setItem(launchKey, now);
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -12,7 +23,6 @@ let rocket = {
     y: canvas.height,
     speed: 7
 };
-
 
 
 // ⭐ STAR BACKGROUND
@@ -34,10 +44,8 @@ function drawStars(){
 }
 
 
-
 // 💥 FIREWORK
 function createFirework(x, y) {
-
     for (let i = 0; i < 120; i++) {
         particles.push({
             x: x,
@@ -49,7 +57,6 @@ function createFirework(x, y) {
         });
     }
 }
-
 
 
 // 🚀 ROCKET
@@ -69,10 +76,8 @@ function drawRocket() {
 }
 
 
-
 function animate() {
 
-    // 🌌 gradient background
     let grad = ctx.createLinearGradient(0,0,0,canvas.height);
     grad.addColorStop(0,"#020111");
     grad.addColorStop(1,"#000000");
@@ -111,7 +116,6 @@ function animate() {
 }
 
 
-
 window.onload = () => {
 
     animate();
@@ -127,3 +131,5 @@ window.onload = () => {
     }, 1800);
 
 };
+
+}
