@@ -7,16 +7,17 @@
 
     <title>VoiceByKajal | Voice Content</title>
 
-    n
 
     <!-- Basic SEO -->
     <meta name="description"
-        content="VoiceByKajal is a platform where Kajal shares voice stories, meaningful messages, and inspiring audio content. Listen to creative voice recordings and connect through voice experiences.">
+        content="VoiceByKajal (ya Voice By Kajal ) is a platform where Kajal shares voice stories, meaningful messages, and inspiring audio content. Listen to creative voice recordings and connect through voice experiences.">
 
     <meta name="keywords"
-        content="VoiceByKajal, Kajal voice, voice stories, audio content, inspiring voice messages, voice storytelling">
+        content="VoiceByKajal, Voice By Kajal, voice stories, audio content, inspiring voice messages, voice storytelling">
 
-    <meta name="author" content="Kajal">
+    <meta name="author" content="haproven">
+    <meta property="og:site_name" content="haproID">
+
 
     <!-- Search Engine Index -->
     <meta name="robots" content="index, follow">
@@ -36,11 +37,69 @@
     <meta name="twitter:image" content="/asside/IMG/logo.png">
 
     <!-- Favicon -->
-    <link rel="icon" href="/asside/IMG/logos.png">
+    <link rel="icon" href="https://voicebykajal.netlify.app/asside/IMG/logos.png">
 
     <link rel="stylesheet" href="/asside/CSS/style.css">
 
     <meta name="google-site-verification" content="pFQ1E7rwZfZG883E_7F4WYRTV6bd-wm_H4KHD5lhFsk" />
+
+
+
+    <!-- STRUCTURED DATA -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://voicebykajal.netlify.app/#kajal",
+  "name": "Kajal",
+  "alternateName": "VoiceByKajal",
+  "url": "https://voicebykajal.netlify.app",
+  "image": "https://voicebykajal.netlify.app/asside/IMG/logos.png",
+  "description": "VoiceByKajal is the official platform of Kajal, a singer from Sitamarhi, Bihar, who shares Hindi and Maithili songs along with devotional and cultural music.",
+
+  "jobTitle": "Singer",
+
+  "homeLocation": {
+    "@type": "Place",
+    "name": "Sitamarhi, Bihar, India"
+  },
+
+  "knowsLanguage": ["Hindi","Maithili","English"],
+
+  "knowsAbout": [
+    "Hindi Songs",
+    "Maithili Songs",
+    "Devotional Music",
+    "Cultural Music of Bihar"
+  ],
+
+  "email": "mailto:voicebykajal@gmail.com",
+
+  "sameAs": [
+    "https://www.youtube.com/@voiceof_kajal",
+    "https://www.instagram.com/voiceof_kajal/"
+  ],
+
+  "worksFor": {
+    "@type": "Organization",
+    "name": "VoiceByKajal",
+    "url": "https://voicebykajal.netlify.app"
+  },
+
+  "creator": {
+    "@type": "Organization",
+    "name": "Haproven",
+    "url": "https://haproven.netlify.app"
+  },
+
+  "copyrightNotice": "© 2026 VoiceByKajal | All Rights Reserved",
+
+  "nationality": {
+    "@type": "Country",
+    "name": "India"
+  }
+}
+</script>
 
 </head>
 
@@ -63,9 +122,9 @@
         </div>
 
         <nav class="nav" id="navMenu">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
             <a href="#">Contact</a>
         </nav>
 
@@ -74,7 +133,7 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="home">
 
         <img src="/asside/IMG/logo.png" class="logo" alt="VoiceByKajal Logo">
 
@@ -96,8 +155,8 @@
 
         <div class="buttons">
 
-            <a href="#">YouTube</a>
-            <a href="#">Instagram</a>
+            <a href="www.youtube.com/@voiceof_kajal">YouTube</a>
+            <a href="https://www.instagram.com/voiceof_kajal/">Instagram</a>
             <a href="#">Facebook</a>
 
         </div>
@@ -121,7 +180,7 @@
                 <img src="/asside/IMG/kajal.png" alt="Kajal">
             </div>
 
-            <div class="about-text">
+            <div class="about-text" id="about">
 
                 <h2>About VoiceByKajal</h2>
 
@@ -153,7 +212,7 @@
 
 
 
-    <section class="why">
+    <section class="why" id="Services">
 
         <div class="why-container">
 
@@ -191,7 +250,7 @@
     </section>
 
 
-    <section class="mission">
+    <section class="mission" id="mission">
 
         <h2 class="mission-title">Our Mission</h2>
 
@@ -250,10 +309,9 @@
 
                 <h3>Quick Links</h3>
 
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Mission</a>
-                <a href="#">YouTube</a>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#mission">Mission</a>
                 <a href="/Information.html">Contact</a>
 
             </div>
@@ -263,11 +321,10 @@
 
                 <h3>Follow</h3>
 
-                <a href="#">YouTube</a>
-                <a href="#">Instagram</a>
+                <a href="www.youtube.com/@voiceof_kajal">YouTube</a>
+                <a href="https://www.instagram.com/voiceof_kajal/">Instagram</a>
                 <a href="#">Facebook</a>
                 <a href="#">Telegram</a>
-                <a href="#">Twitter / X</a>
 
             </div>
 
@@ -290,7 +347,7 @@
             <footer>
                 <p>
                     © 2026 VoiceByKajal | All Rights Reserved
-                    | Powered by <a href="https://haproven.netlify.app/">Haproven</a>
+                    | Powered by <a href="https://haproven.netlify.app/" style="color: #fff;">Haproven</a>
                 </p>
             </footer>
 
