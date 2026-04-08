@@ -6,7 +6,7 @@ const now = Date.now();
 const lastLaunch = localStorage.getItem(launchKey);
 
 // ⏱️ 10 minutes = 600000 ms
-if (lastLaunch && (now - lastLaunch < 600000)) {
+if (lastLaunch && (now - lastLaunch < 1000)) {
     canvas.remove();
 } else {
 
