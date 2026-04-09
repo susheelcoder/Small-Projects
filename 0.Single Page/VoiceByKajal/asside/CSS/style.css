@@ -30,7 +30,7 @@ body {
     color: #fff;
     width: 100%;
     position: fixed;
-    z-index: 9999;
+    z-index: 99;
     top: 0;
 }
 
@@ -811,7 +811,7 @@ body {
             border-bottom: 1px solid #222;
             margin-top: -3px;
             position: fixed;
-            z-index: 9999;
+            z-index: 99;
         }
 
         .update-move {
