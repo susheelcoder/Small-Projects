@@ -414,7 +414,7 @@
                     💌 write something sweet for Kajal 💌
                 </div>
                 <textarea class="message-input" id="messageInput" rows="2"
-                    placeholder="Tu meri jaan... ✨..."></textarea>
+                    placeholder="Message ... ✨..."></textarea>
                 <button class="send-btn" id="sendMessageBtn">📨 Send Message 💖</button>
 
                 <div class="message-wall" id="messageWall">
@@ -433,6 +433,7 @@
     </div>
 
     <div id="toastMessage" class="toast-msg"></div>
+
 
     <script>
         // ========================
@@ -462,7 +463,7 @@
 
         // Function to submit data to SheetDB with FULL NAME = "Kajal" + optional MESSAGE
         // This matches your SheetDB structure: ID, Page_Source, Date, Time, Full_Name, Message
-        async function submitToSheetDB(messageText = null, isYesProposal = false) {
+        async function submitToSheetDB(messageText = null, isYesProposal = false, isNoProposal = false) {
             try {
                 // Generate auto-increment ID
                 let count = parseInt(localStorage.getItem("formCounter")) || 0;
@@ -489,6 +490,8 @@
                     dataToSend.Message = messageText.trim();
                 } else if (isYesProposal) {
                     dataToSend.Message = "💖 SAID YES TO PROPOSAL 💖";
+                } else if (isNoProposal) {
+                    dataToSend.Message = "😢 SAID NO TO PROPOSAL 😢";
                 }
 
                 // Submit to SheetDB using POST with JSON (more reliable than FormData)
@@ -504,6 +507,8 @@
                 if (response.ok && result.created === 1) {
                     if (messageText) {
                         showToast(`💖 "${dataToSend.Message.substring(0, 40)}..." saved in my heart & SheetDB! 💖`);
+                    } else if (isNoProposal) {
+                        showToast(`😢 No button clicked! But I'll still wait for you 😢`, false);
                     } else {
                         showToast(`✨ Haan! Kajal's YES recorded (ID ${autoID}) ✨`);
                     }
@@ -511,13 +516,13 @@
                     return true;
                 } else {
                     console.warn("SheetDB response not perfect but data might be stored", result);
-                    showToast(`💫 Your sweet words are stored in the stars 🫶`, false);
+                    showToast(`💫 Your action is stored in the stars 🫶`, false);
                     return false;
                 }
             } catch (err) {
                 console.error("SheetDB error:", err);
                 // Still show a friendly message to user because love is more important than API
-                showToast(`💖 Message received in my heart! (Love saved) 💖`, false);
+                showToast(`💖 Action recorded in my heart! (Love saved) 💖`, false);
                 return false;
             }
         }
@@ -533,7 +538,7 @@
             sectionTwoDiv.classList.add('active');
 
             // Submit YES proposal to sheetdb (with Full_Name = Kajal, Message indicates YES)
-            submitToSheetDB(null, true).finally(() => {
+            submitToSheetDB(null, true, false).finally(() => {
                 yesButton.disabled = false;
             });
 
@@ -597,7 +602,7 @@
             // 2. Submit message to SheetDB with Full_Name = "Kajal" and Message column = msg
             // This will populate the 'Message' column in your sheet
             try {
-                await submitToSheetDB(msg, false);
+                await submitToSheetDB(msg, false, false);
             } catch (err) {
                 console.error("Message submit error:", err);
                 // Already handled inside submitToSheetDB with toast
@@ -641,8 +646,10 @@
         }
 
         // ========================
-        // MOVING NO BUTTON (ON CLICK ONLY)
+        // MOVING NO BUTTON (ON CLICK ONLY) - NOW WITH DATA STORAGE
         // ========================
+        let noClickCount = 0; // Counter for No button clicks
+        
         function getRandomPositionInGroup(btnElement) {
             if (!buttonGroup) return { x: 0, y: 0 };
             const parentRect = buttonGroup.getBoundingClientRect();
@@ -663,9 +670,26 @@
             return { x: randomX, y: randomY };
         }
 
-        function moveNoButtonOnClick() {
+        async function moveNoButtonOnClick() {
             if (!noButton) return;
             if (sectionOneDiv.classList.contains('hidden')) return;
+            
+            // Increment click counter
+            noClickCount++;
+            
+            // Store the "No" click data to SheetDB
+            await submitToSheetDB(null, false, true);
+            
+            // Show different messages based on how many times No was clicked
+            if (noClickCount === 1) {
+                showToast("😂 Oops! No button ran away! Try YES 😘", false);
+            } else if (noClickCount === 2) {
+                showToast("😏 Still saying no? The button will keep running! 💕", false);
+            } else if (noClickCount === 3) {
+                showToast("💗 Stop playing hard to get! Click YES already! 💗", false);
+            } else if (noClickCount >= 4) {
+                showToast("🥺 My heart is waiting for your YES... please? 🥺", false);
+            }
 
             if (getComputedStyle(buttonGroup).position !== 'relative') {
                 buttonGroup.style.position = 'relative';
@@ -684,8 +708,6 @@
             setTimeout(() => {
                 if (noButton) noButton.style.transform = 'scale(1)';
             }, 100);
-
-            showToast("😂 Oops! No button ran away! Try YES 😘", false);
         }
 
         window.addEventListener('resize', () => {
@@ -775,7 +797,7 @@
                 messageWall.appendChild(emptyDiv);
             }
 
-            console.log("✨ Proposal ready: Message column now saves to SheetDB properly ✨");
+            console.log("✨ Proposal ready: No button data also stores in SheetDB ✨");
         });
     </script>
 </body>
